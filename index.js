@@ -49,18 +49,18 @@ import ReactDOM from 'react-dom'
 const TRANSACTION_WRAPPERS = [
   {
     initialize:function (){
-      console.log('log begin at'+ new Date().getTime())
+      console.log('log begin time'+ new Date().getTime())
     },
     close:function (){
-      console.log('log end at'+ new Date().getTime())
+      console.log('log end time'+ new Date().getTime())
     },
   },
   {
     initialize:function (){
-      console.log(1)
+      console.log('执行第二队列的initialize....')
     },
     close:function (){
-      console.log(2)
+      console.log('执行第二队列的close...')
     },
   }
 ];
@@ -78,16 +78,26 @@ Object.assign(LogTransaction.prototype, Transaction.Mixin, {
 var transMyaction = new LogTransaction();
 
 class Main extends Component {
-  sayHello(){
-    console.log('Hello，An ge')
+  constructor(){
+    super()
+    this.state={
+      time: 1
+    }
+  }
+  func1(){
+    this.setState({
+      time: 2
+    })
+    console.log('此处为执行函数....')
   }
   handleClick() {
-    transMyaction.perform(this.sayHello, this)
+    transMyaction.perform(this.func1, this)
   }
   render() {
+    const { time } = this.state
     return (
       <div>
-        <button onClick={() => this.handleClick()}>say Hello</button>      
+        <button onClick={() => this.handleClick()}>say Hello{time}</button>      
       </div>
     );
   }
