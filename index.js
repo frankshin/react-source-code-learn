@@ -9,17 +9,9 @@
 //     }
 //   }
 
-//   setStateValue(){
-//     this.setState({
-//       value: 2
-//     })
-//     console.log('setStateValue value', this.state.value) // ？
-//   }
-
 //   render(){
 //     const { value } = this.state
 //     return <div>点击我{value}</div>
-//     // return <div onClick={() => { this.setStateValue() }}>点击我{value}</div>
 //   }
 
 //   componentDidMount(){
@@ -29,7 +21,7 @@
 //       _this.setState({
 //         value: 2
 //       })
-//       console.log('value', _this.state.value) // ？
+//       console.log('time:', _this.state.value) // ？
 //     }, false)
 //   }
 // }
@@ -38,6 +30,7 @@
 //   <IndexPage />,
 //   document.getElementById('root')
 // );
+
 
 
 
@@ -88,10 +81,11 @@ class Main extends Component {
     this.setState({
       time: 2
     })
-    console.log('此处为执行函数....')
+    console.log('time：', this.state.time)
   }
   handleClick() {
-    transMyaction.perform(this.func1, this)
+    // transMyaction.perform(this.func1, this)
+    this.func1()
   }
   render() {
     const { time } = this.state
