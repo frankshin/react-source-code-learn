@@ -78,8 +78,13 @@ class Main extends Component {
     }
   }
   func1(){
-    this.setState({
-      time: 2
+    // this.setState({
+    //   time: 2
+    // })
+    this.setState((state) => {
+      return {
+        time: state.time + 1
+      }
     })
     console.log('time：', this.state.time)
   }
