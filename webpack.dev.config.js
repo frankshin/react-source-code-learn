@@ -30,6 +30,12 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    alias: {
+      'react': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react`),
+      'react-dom': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react-dom`)
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',

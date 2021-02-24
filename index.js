@@ -35,7 +35,7 @@
 
 
 
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import Transaction from 'react/lib/Transaction';
 import ReactDOM from 'react-dom'
 
