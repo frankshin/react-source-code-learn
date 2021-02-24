@@ -24,4 +24,9 @@ npm run dev:16.1.0
 
 ### 自定义环境
 
-目前自定义环境需要手动配置，将react对应版本包放入react文件夹，然后创建指定版本的入口文件index-version.js即可
+```
+目前自定义环境需要手动配置
+1、在script目录中修改需要使用的版本号
+2、运行 npm run add,将react对应版本包放入react文件夹
+3、创建指定版本的入口文件index-version.js即可
+```
