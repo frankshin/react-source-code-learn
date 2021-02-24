@@ -1,3 +1,27 @@
-# react-v5-test
+# react-source-code-learn
 
-demo for 辅助react v15的源码阅读
+## what
+
+该仓库是个人学习react源码搭建的脚手架，可以自由运行想要学习的react版本环境，每个版本的react源码会在学习过程中添加相对详细的学习注释，以便快速理解。
+
+## how
+
+### 安装
+
+```js
+npm i
+```
+
+### 运行各种版本环境
+
+```js
+// 运行react15.3.1环境
+npm run dev:15.3.1
+
+// 运行react16.1.0环境
+npm run dev:16.1.0
+```
+
+### 自定义环境
+
+目前自定义环境需要手动配置，将react对应版本包放入react文件夹，然后创建指定版本的入口文件index-version.js即可
