@@ -149,6 +149,9 @@ function runBatchedUpdates(transaction) {
       console.time(markerName);
     }
     // 判断组件是否需要更新，然后进行 diff 操作，最后更新 DOM
+    // Virtual DOM 层
+    // Reconciler 层
+    // Renderer 层
     ReactReconciler.performUpdateIfNecessary(component, transaction.reconcileTransaction, updateBatchNumber);
 
     if (markerName) {
@@ -195,7 +198,7 @@ function enqueueUpdate(component) {
   ensureInjected();
   // 判断当前是否在更新流程，如果不在更新流程，则调用batchingStrategy.batchedUpdates 进行更新
   if (!batchingStrategy.isBatchingUpdates) {
-    console.log(111)
+    
     // batchingStrategy 是 React 进行批处理的一种策略，该策略的实现基于 Transaction，虽然名字和数据库的事务一样，但是做的事情却不一样。
     // 如果是在react合成事件或者生命周期中，batchedUpdates会在ReactEventListener.js中被优先调用，以便将isBatchingUpdates设置为true
     // 但是如果不在react管理中，也是会走到这一步 batchedUpdates，为什么却能实现setstate的同步操作？？？？
@@ -207,6 +210,7 @@ function enqueueUpdate(component) {
   // You may ask, so when will that component be updated?
   // Recall that we are already inside a batching update now,
   // so when we finish the main job(render), it will call flushBatchedUpdates() at close time.
+  // 到这同步的链就断了（article 流程图），浏览器断点 debugger ps:time too long ===> 待render后才会xxxxx,it will call ReactDefaultBatchingStrategy.flushBatchedUpdates() at close time.
   dirtyComponents.push(component);
   if (component._updateBatchNumber == null) {
     console.log(222)

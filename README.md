@@ -31,4 +31,3 @@ npm run dev:16.1.0
 2、运行 npm run add,将react对应版本包放入react文件夹
 
 3、创建指定版本的入口文件index-version.js即可
-

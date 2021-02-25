@@ -147,6 +147,7 @@ var ReactReconciler = {
   // performUpdateIfNecessary() 会调用 Component.updateComponent()，
   // 在 updateComponent() 中，会从 _pendingStateQueue 中取出所有的值来更新。
   performUpdateIfNecessary: function (internalInstance, transaction, updateBatchNumber) {
+    // 批处理标判断
     if (internalInstance._updateBatchNumber !== updateBatchNumber) {
       // The component's enqueued batch number should always be the current batch or the following one.
       process.env.NODE_ENV !== 'production'

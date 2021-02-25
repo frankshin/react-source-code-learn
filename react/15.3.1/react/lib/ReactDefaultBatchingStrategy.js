@@ -54,7 +54,6 @@ var ReactDefaultBatchingStrategy = {
    * 在上下文中调用提供的函数，在该上下文中，对setState和朋友的调用将被批量处理，从而不会不必要地更新组件。
    */
   //callback: 即enqueueUpdate
-  // 在组件 mount 和事件调用（即react自己封装的合成事件）的时候，都会调用 batchedUpdates
   batchedUpdates: function (callback, a, b, c, d, e) {
     console.log(333, 'batchedUpdates')
     var alreadyBatchingUpdates = ReactDefaultBatchingStrategy.isBatchingUpdates;

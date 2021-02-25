@@ -101,6 +101,7 @@ var Mixin = {
    * @return {*} Return value from `method`.
    */
   perform: function (method, scope, a, b, c, d, e, f) {
+    // 不允许调用一个正在执行中的事务
     !!this.isInTransaction()
       ? process.env.NODE_ENV !== 'production'
         ? invariant(false, 'Transaction.perform(...): Cannot initialize a transaction when there is already an outstanding transaction.') : _prodInvariant('27') : void 0;
@@ -122,9 +123,9 @@ var Mixin = {
           // 如果methd抛出错误，则更偏向于通过调用`closeAll`来显示堆栈跟踪。
           try {
             this.closeAll(0);
-          } catch (err) {}
+          } catch (err) {} // 吃掉异常。。
         } else {
-          // Since `method` didn't throw, we don't want to silence the exception here.
+          // errorThrown=false 说明上述method执行正常，无需处理异常，直接执行扫尾方法即可
           this.closeAll(0);
         }
       } finally {
