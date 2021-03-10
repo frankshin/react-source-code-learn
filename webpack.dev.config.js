@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   cache: false,
   entry: {
-    index: `./index-${process.env.LEARN_VERSION}.js`,
+    index: `./${process.env.LEARN_VERSION}/index.js`,
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
