@@ -33,6 +33,7 @@ module.exports = {
     alias: {
       'react': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react`),
       'react-dom': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react-dom`),
+      'react-router-dom': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react-router-dom`),
       'fbjs': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/fbjs`)
     }
   },
