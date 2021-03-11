@@ -5,9 +5,14 @@ export const routers = [
     component: () => import('@/pages/set-state/index')
   },
   {
-    path: '/pages/child-component-render',
-    title: 'pureComponent',
-    component: () => import('@/pages/child-component-render/index')
+    path: '/pages/child-component-render-class',
+    title: 'child-component-render-class',
+    component: () => import('@/pages/child-component-render-class')
+  },
+  {
+    path: '/pages/child-component-render-hooks',
+    title: 'child-component-render-hooks',
+    component: () => import('@/pages/child-component-render-hooks')
   },
   // {
   //   path: '/',

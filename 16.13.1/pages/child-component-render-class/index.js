@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 // import One from './components/pure-child'
 import One from './components/scu-child'
-export default class PureComponentPage extends Component {
+export default class ChildComponentRenderClass extends Component {
   constructor(props){
     super(props)
     this.state={
@@ -23,7 +23,7 @@ export default class PureComponentPage extends Component {
     const { time, tit } = this.state
     return(
       <div onClick={() => this.resetValue()}>
-        test pureComponent render{time}
+        test pureComponent render in class{time}
         <One
           title={tit}
         />
