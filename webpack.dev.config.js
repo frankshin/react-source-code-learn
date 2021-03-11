@@ -14,6 +14,8 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
+    hot: true,
+    historyApiFallback: true,
     port: 9001
   },
   module: {
@@ -23,9 +25,6 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
         }
       }
     ]

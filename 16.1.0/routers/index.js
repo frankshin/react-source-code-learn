@@ -1,10 +1,12 @@
 export const routers = [
   {
-    path: '/set-state',
-    title: 'setState'
+    path: '/pages/set-state',
+    title: 'setState',
+    component: () => import('../pages/set-state')
   },
   {
-    path: '/pure-component',
-    title: 'pureComponent'
+    path: '/pages/pure-component',
+    title: 'pureComponent',
+    component: () => import('../pages/pure-component')
   }
 ]

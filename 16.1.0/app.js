@@ -4,11 +4,15 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-// components
 import Menu from './component/menu'
-// pages
-import SetStatePage from './pages/set-state'
-import PureComponentPage from './pages/pure-component'
+import { routers } from './routers'
+
+// import PureComponent from './pages/pure-component'
+
+async function test(component) {
+  const dom = await component()
+  return dom
+}
 
 export default class App extends Component {
   constructor(props){
@@ -21,12 +25,24 @@ export default class App extends Component {
         <div>
           <Menu />
           <Switch>
-            <Route path="/set-state">
-              <SetStatePage />
-            </Route>
-            <Route path="/pure-component">
-              <PureComponentPage />
-            </Route>
+            {
+              routers.map((item, index) => {
+                const { path, component } = item
+
+                // const mod = require('./pages/pure-component').default
+                const mod = test()
+                console.log(111, mod)
+
+                return (
+                  <Route
+                    path={path}
+                    component={
+                      mod
+                    }
+                  />
+                )
+              })
+            }
           </Switch>
         </div>
       </Router>
@@ -34,3 +50,7 @@ export default class App extends Component {
   }
 }
 
+
+function User(){
+  return <div>fsfdsfds</div>
+}
