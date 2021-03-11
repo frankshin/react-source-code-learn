@@ -4,11 +4,12 @@ module.exports = function (api) {
   const presets = [
     [
       '@babel/preset-env',
-      // {
-      //   "targets": {
-      //     "esmodules": true
-      //   }
-      // }
+      {
+        // "targets": {
+        //   "esmodules": true
+        // },
+        'modules': false,  // 让 babel 不转换我们的 module，而让 webpack 来处理模块（为了tree-shaking）。
+      }
     ], '@babel/preset-react'];
   const plugins = [
     [
@@ -24,7 +25,9 @@ module.exports = function (api) {
   ]
 
   return {
-    // sourceType: 'unambiguous', // 这也可以，为啥pms没写这个也可以？测试下
+    sourceType: 'unambiguous', // 让 babel 自动推断编译的模块类型
+    // sourceType: 'module', // 默认es模块语法
+    ignore: [/@babel[/\\]runtime/], // 因为编译包括 node_modules，要忽略 @babel/runtime处理
     presets,
     plugins
   };
