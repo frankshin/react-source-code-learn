@@ -25,7 +25,7 @@ module.exports = function (api) {
   ]
 
   return {
-    sourceType: 'unambiguous', // 让 babel 自动推断编译的模块类型
+    // sourceType: 'unambiguous', // 让 babel 自动推断编译的模块类型 或者直接在webpack.config中将node_modules和local_react exclude掉也可以，就不会出现exports和es模块的语法冲突问题
     // sourceType: 'module', // 默认es模块语法
     ignore: [/@babel[/\\]runtime/], // 因为编译包括 node_modules，要忽略 @babel/runtime处理
     presets,

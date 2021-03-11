@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const localReactFolder = `local-react/${process.env.LEARN_VERSION}`
 
 module.exports = {
   mode: 'development',
@@ -23,7 +24,7 @@ module.exports = {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules|local-react)/, // ps: 
         use: {
           loader: 'babel-loader',
         }
@@ -32,10 +33,10 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'react': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react`),
-      'react-dom': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react-dom`),
-      'react-router-dom': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react-router-dom`),
-      'fbjs': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/fbjs`),
+      'react': path.resolve(__dirname, `${localReactFolder}/react`),
+      'react-dom': path.resolve(__dirname, `${localReactFolder}/react-dom`),
+      'react-router-dom': path.resolve(__dirname, `${localReactFolder}/react-router-dom`),
+      'fbjs': path.resolve(__dirname, `${localReactFolder}/fbjs`),
       '@': path.resolve(__dirname, `${process.env.LEARN_VERSION}`)
     }
   },
