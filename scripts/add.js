@@ -2,7 +2,7 @@
 
 const path = require('path')
 const execa = require('execa')
-const version = '16.1.0'
+const version = '16.13.1'
 const url = `https://registry.npmjs.org/react/-/react-${version}.tgz`
 const fileName = `${version}.zip`
 const filePath = path.join(__dirname, `../react/${fileName}`)

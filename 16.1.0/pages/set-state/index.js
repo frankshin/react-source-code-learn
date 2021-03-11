@@ -1,7 +1,7 @@
+// setstate执行流测试
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom'
 
-class Main extends Component {
+export default class setStatePage extends Component {
   constructor(){
     super()
     this.state={
@@ -32,7 +32,3 @@ class Main extends Component {
     );
   }
 }
-ReactDOM.render(
-  <Main />,
-  document.getElementById('root')
-);

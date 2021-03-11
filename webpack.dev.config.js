@@ -5,15 +5,18 @@ module.exports = {
   mode: 'development',
   cache: false,
   entry: {
-    index: `./index-${process.env.LEARN_VERSION}.js`,
+    index: `./${process.env.LEARN_VERSION}/index.js`,
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: 'dist/[name].js',
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/',
+    filename: '[name].js',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, './dist'),
     compress: true,
+    hot: true,
+    historyApiFallback: true,
     port: 9001
   },
   module: {
@@ -23,9 +26,6 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
         }
       }
     ]
@@ -34,7 +34,9 @@ module.exports = {
     alias: {
       'react': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react`),
       'react-dom': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react-dom`),
-      'fbjs': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/fbjs`)
+      'react-router-dom': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/react-router-dom`),
+      'fbjs': path.resolve(__dirname, `react/${process.env.LEARN_VERSION}/fbjs`),
+      '@': path.resolve(__dirname, `${process.env.LEARN_VERSION}`)
     }
   },
   plugins: [
