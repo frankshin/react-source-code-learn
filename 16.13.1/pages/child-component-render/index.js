@@ -2,7 +2,8 @@
  *  父组件渲染 子组件渲染测试 
  */
 import React, { Component } from 'react'
-import One from './components/one'
+// import One from './components/pure-child'
+import One from './components/scu-child'
 export default class PureComponentPage extends Component {
   constructor(props){
     super(props)

@@ -1,4 +1,5 @@
-import React, { Component, PureComponent } from 'react'
+// scu -> shouldComponentUpdate
+import React, { PureComponent } from 'react'
 
 export default class OneComponent extends PureComponent {
   render(){

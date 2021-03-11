@@ -5,9 +5,9 @@ export const routers = [
     component: () => import('@/pages/set-state/index')
   },
   {
-    path: '/pages/pure-component',
+    path: '/pages/child-component-render',
     title: 'pureComponent',
-    component: () => import('@/pages/pure-component/index')
+    component: () => import('@/pages/child-component-render/index')
   },
   // {
   //   path: '/',
