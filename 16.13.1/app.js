@@ -1,19 +1,7 @@
-import React, {Component} from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import React, {Component, Suspense} from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Menu from './component/menu'
 import { routers } from './routers'
-
-// import PureComponent from './pages/pure-component'
-
-async function test(component) {
-  const dom = await component()
-  return dom
-}
-
 export default class App extends Component {
   constructor(props){
     super()
@@ -28,16 +16,19 @@ export default class App extends Component {
             {
               routers.map((item, index) => {
                 const { path, component } = item
-
-                // const mod = require('./pages/pure-component').default
-                const mod = test()
-                console.log(111, mod)
+                const Page = React.lazy(component)
 
                 return (
                   <Route
                     path={path}
-                    component={
-                      mod
+                    key={index}
+                    exact
+                    render={
+                      () => (
+                        <Suspense fallback={<div>Loading...</div>}>
+                          <Page />
+                        </Suspense>
+                      )
                     }
                   />
                 )
@@ -50,7 +41,3 @@ export default class App extends Component {
   }
 }
 
-
-function User(){
-  return <div>fsfdsfds</div>
-}
