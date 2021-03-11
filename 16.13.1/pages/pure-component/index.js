@@ -1,13 +1,32 @@
 /**
  *  父组件渲染 子组件渲染测试 
  */
-
 import React, { Component } from 'react'
-
+import One from './components/one'
 export default class PureComponentPage extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      tit: '子组件1'
+    }
+  }
+
+  resetValue() {
+    this.setState({
+      time: 2,
+      // tit: '子组件props改变啦' // 子组件的props改变了，子组件会重新渲染
+    })
+  }
+
   render (){
+    const { time, tit } = this.state
     return(
-      <div>test pureComponent</div>
+      <div onClick={() => this.resetValue()}>
+        test pureComponent render{time}
+        <One
+          title={tit}
+        />
+      </div>
     )
   }
 }
