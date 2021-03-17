@@ -26,6 +26,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "allsaberjs": "file:../allsaberjs",
     "react": "^16.1.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"

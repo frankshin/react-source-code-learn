@@ -14,8 +14,9 @@ export const routers = [
     title: 'child-component-render-hooks',
     component: () => import('@/pages/child-component-render-hooks')
   },
-  // {
-  //   path: '/',
-  //   title: 'pureComponent',
-  // }
+  {
+    path: '/',
+    title: 'dashboard',
+    component: () => import('@/pages/dashboard/')
+  }
 ]
