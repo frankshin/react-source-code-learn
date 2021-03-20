@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:15.3.1": "cross-env LEARN_VERSION=15.3.1 webpack serve --config webpack.dev.config.js",
-    "dev:16.1.0": "cross-env LEARN_VERSION=16.1.0 webpack serve --config webpack.dev.config.js",
-    "dev:16.13.1": "cross-env LEARN_VERSION=16.13.1 webpack serve --config webpack.dev.config.js",
+    "dev:15.3.1": "cross-env LEARN_VERSION=15.3.1 webpack serve --config config/webpack.dev.react-config.js",
+    "dev:16.1.0": "cross-env LEARN_VERSION=16.1.0 webpack serve --config config/webpack.dev.react-config.js",
+    "dev:16.13.1": "cross-env LEARN_VERSION=16.13.1 webpack serve --config config/webpack.dev.react-config.js",
+    "dev:syntax": "cross-env LEARN_VERSION=16.13.1 webpack serve --config config/webpack.dev.syntax-config.js",
     "add": "node scripts/add.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
