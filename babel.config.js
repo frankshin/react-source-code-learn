@@ -5,10 +5,11 @@ module.exports = function (api) {
     [
       '@babel/preset-env',
       {
-        // "targets": {
-        //   "esmodules": true
-        // },
-        'modules': false,  // 让 babel 不转换我们的 module，而让 webpack 来处理模块（为了tree-shaking）。
+        "targets": {
+          "esmodules": true // 
+        },
+        // 'useBuiltIns': 'usage', // 按需添加polyfill
+        // 'modules': false,  // 让 babel 不转换我们的 module，而让 webpack 来处理模块（为了tree-shaking）。
       }
     ], '@babel/preset-react'];
   const plugins = [

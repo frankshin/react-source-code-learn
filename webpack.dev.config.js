@@ -1,12 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const localReactFolder = `local-react/${process.env.LEARN_VERSION}`
+const localReactFolder = `react-local/${process.env.LEARN_VERSION}`
+const praticesCodeFolder = path.resolve(__dirname, `react-pratices/${process.env.LEARN_VERSION}`)
 
 module.exports = {
   mode: 'development',
   cache: false,
   entry: {
-    index: `./${process.env.LEARN_VERSION}/index.js`,
+    index: `${praticesCodeFolder}/index.js`,
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -24,7 +25,7 @@ module.exports = {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|local-react)/, // ps: 
+        exclude: /(node_modules|react-local)/, // ps: 
         use: {
           loader: 'babel-loader',
         }
@@ -37,7 +38,7 @@ module.exports = {
       'react-dom': path.resolve(__dirname, `${localReactFolder}/react-dom`),
       'react-router-dom': path.resolve(__dirname, `${localReactFolder}/react-router-dom`),
       'fbjs': path.resolve(__dirname, `${localReactFolder}/fbjs`),
-      '@': path.resolve(__dirname, `${process.env.LEARN_VERSION}`)
+      '@': path.resolve(__dirname, `${praticesCodeFolder}`)
     }
   },
   plugins: [
