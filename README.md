@@ -10,8 +10,13 @@
 
 ## 目录结构
 
-```
---
+```js
+-- react-local // react本地代码 
+  -- 15.3.1
+  -- 16.1.0
+  -- ... // 其他需要测试的版本
+-- react-pratices // 一些测试react相关features的业务代码
+-- syntax-pratices // 语法的实践代码
 ```
 
 ## usage
