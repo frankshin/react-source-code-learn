@@ -1,43 +1,18 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const praticesCodeFolder = path.resolve(__dirname, `../syntax-pratices`)
+const path = require('path')
+const praticesCodeFolder = path.resolve(__dirname, '../syntax-pratices')
+const baseConfig = require('./webpack.base')
+const { merge } = require('webpack-merge')
 
-module.exports = {
-  mode: 'development',
-  cache: false,
-  entry: {
-    index: `${praticesCodeFolder}/index.js`,
-  },
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/',
-    filename: '[name].js',
-  },
-  devServer: {
-    contentBase: path.join(__dirname, './dist'),
-    compress: true,
-    hot: true,
-    historyApiFallback: true,
-    port: 9001
-  },
-  module: {
-    rules: [
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-        }
-      }
-    ]
-  },
-  resolve: {
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true,
-    }),
-  ]
-};
+module.exports = function () {
+  const devConfig = {
+    entry: {
+      index: `${praticesCodeFolder}/index.js`,
+    },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, `${praticesCodeFolder}`),
+      },
+    },
+  }
+  return merge(baseConfig, devConfig)
+}
