@@ -11,10 +11,9 @@ export default class App extends Component {
   render () {
     return (
       <Router>
-        <div>
-          <Menu />
-          <Switch>
-            {
+        {/* <Menu /> */}
+        <Switch>
+          {
               routers.map((item, index) => {
                 const { path, component } = item
                 const Page = React.lazy(component)
@@ -35,8 +34,7 @@ export default class App extends Component {
                 )
               })
             }
-          </Switch>
-        </div>
+        </Switch>
       </Router>
     )
   }
