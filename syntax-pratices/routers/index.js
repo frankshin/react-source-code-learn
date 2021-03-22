@@ -9,4 +9,9 @@ export const routers = [
     title: 'flex test',
     component: () => import('@/pages/flex'),
   },
+  {
+    path: '/syntax/px-rpx-em-rem',
+    title: 'px-rpx-em-rem test',
+    component: () => import('@/pages/px-rpx-em-rem'),
+  },
 ]
