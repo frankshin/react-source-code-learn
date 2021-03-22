@@ -14,4 +14,9 @@ export const routers = [
     title: 'px-rpx-em-rem test',
     component: () => import('@/pages/px-rpx-em-rem'),
   },
+  {
+    path: '/syntax/throttle',
+    title: 'throttle test',
+    component: () => import('@/pages/throttle'),
+  },
 ]
