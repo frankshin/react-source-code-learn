@@ -24,4 +24,9 @@ export const routers = [
     title: 'half px test',
     component: () => import('@/pages/half-px'),
   },
+  {
+    path: '/syntax/async',
+    title: '异步执行先后测试',
+    component: () => import('@/pages/async'),
+  },
 ]
