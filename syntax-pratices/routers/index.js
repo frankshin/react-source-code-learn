@@ -19,4 +19,9 @@ export const routers = [
     title: 'throttle test',
     component: () => import('@/pages/throttle'),
   },
+  {
+    path: '/syntax/half-px',
+    title: 'half px test',
+    component: () => import('@/pages/half-px'),
+  },
 ]

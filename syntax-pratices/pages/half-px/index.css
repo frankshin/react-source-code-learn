@@ -1,0 +1,18 @@
+.label{
+  margin-top: 20px;
+}
+
+.line1{
+  box-shadow: 0 0 0 1px black;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2){
+  .line1{
+    box-shadow: 0 0 0 0.5px;
+  }
+}
+
+/* @media (min-resolution: 2dppx) {
+  .line1 {
+    box-shadow: 0 0 0 0.5px;
+  }
+} */
