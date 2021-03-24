@@ -29,4 +29,9 @@ export const routers = [
     title: '异步执行先后测试',
     component: () => import('@/pages/async'),
   },
+  {
+    path: '/syntax/algorithm',
+    title: '算法测试',
+    component: () => import('@/pages/algorithm'),
+  },
 ]
