@@ -1,7 +1,7 @@
 import React, { Component, Suspense } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Menu from './component/menu'
-import { routers } from './routers'
+import routers from './routers'
 export default class App extends Component {
   constructor (props) {
     super()

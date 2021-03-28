@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import { routers } from '../../routers'
+import routers from '../../routers'
 import { Link } from 'react-router-dom'
 
 export default class MenuComponent extends Component {
