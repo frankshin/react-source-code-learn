@@ -14,4 +14,9 @@ export default [
     title: 'half px test',
     component: () => import('@/pages/css/half-px'),
   },
+  {
+    path: '/pages/css/rectangle',
+    title: 'css绘制矩形',
+    component: () => import('@/pages/css/rectangle'),
+  },
 ]
