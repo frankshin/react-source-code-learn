@@ -4,7 +4,8 @@ export default function SelfRouterPage () {
   const nowPath = window.location.pathname
   const [path, setPath] = useState(nowPath)
   const goDirect = (path) => {
-    window.location.pathname = path
+    // window.location.pathname = path
+    window.history.pushState(null, 'test', path)
     setPath(path)
   }
 
