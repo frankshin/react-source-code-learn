@@ -1,5 +1,30 @@
+import { useState } from 'react'
+
 export default function SelfRouterPage () {
+  const nowPath = window.location.pathname
+  const [path, setPath] = useState(nowPath)
+  const goDirect = (path) => {
+    window.location.pathname = path
+    setPath(path)
+  }
+
+  const pageComponent = () => {
+    switch (path) {
+      case '/login':
+        return <div>登录页</div>
+      case '/home':
+        return <div>home主页</div>
+      default:
+        return <div>默认页</div>
+    }
+  }
+
   return (
-    <div>实现自写路由</div>
+    <div>
+      <div className="title">实现自写路由测试页</div>
+      <div onClick={() => goDirect('/login')}>login</div>
+      <div onClick={() => goDirect('/home')}>home</div>
+      <div>{pageComponent()}</div>
+    </div>
   )
 }
