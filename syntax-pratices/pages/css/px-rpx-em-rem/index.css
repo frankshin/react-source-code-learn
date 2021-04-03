@@ -1,0 +1,7 @@
+.wrap >div{
+  margin-bottom: 30px;
+}
+.wrap .common{
+  height: 2px;
+  border: 1px solid black;
+}

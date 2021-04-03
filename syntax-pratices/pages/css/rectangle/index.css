@@ -1,0 +1,13 @@
+.scale {
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  border: 1px solid blue;
+  position: relative;
+}
+.item {
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  position: absolute;
+}
