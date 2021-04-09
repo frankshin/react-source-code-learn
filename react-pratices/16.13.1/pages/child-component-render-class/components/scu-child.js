@@ -2,15 +2,15 @@
 import React, { Component } from 'react'
 
 export default class OneComponent extends Component {
-  render(){
+  render () {
     console.log('child render....')
     const { title } = this.props
     return (
-      <div>component：{ title }</div>
+      <div>component：{title}</div>
     )
   }
 
-  shouldComponentUpdate(){
+  shouldComponentUpdate () {
     return false
   }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import One from './components/one'
 
-export default function ChildComponentRenderHooks (){
+export default function ChildComponentRenderHooks () {
   const [time, setTime] = useState(0)
   const [tit, setTit] = useState('hello')
 
@@ -12,7 +12,7 @@ export default function ChildComponentRenderHooks (){
         tit={tit}
       />
     )
-  }, [time])
+  }, [time, tit])
 
   const resetVal = () => {
     setTime(1)
@@ -23,7 +23,7 @@ export default function ChildComponentRenderHooks (){
       onClick={() => resetVal()}
     >
       test pureComponent render in hooks{time}
-      { componentOne }
+      {componentOne}
     </div>
   )
 }
