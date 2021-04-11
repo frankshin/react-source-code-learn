@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const codeRootFolder = path.resolve(__dirname, '../self-router')
 const baseConfig = require('./webpack.base')
 const { merge } = require('webpack-merge')
@@ -14,11 +13,6 @@ module.exports = function () {
         '@': path.resolve(__dirname, `${codeRootFolder}`),
       },
     },
-    plugins: [
-      new webpack.ProvidePlugin({
-        React: 'react',
-      }),
-    ],
   }
   return merge(baseConfig, devConfig)
 }

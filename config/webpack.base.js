@@ -1,5 +1,6 @@
 
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const localReactFolder = `../react-local/${process.env.LEARN_VERSION}`
 
@@ -62,6 +63,9 @@ const baseConfigs = {
       filename: 'index.html',
       template: 'index.html',
       inject: true,
+    }),
+    new webpack.ProvidePlugin({
+      React: 'react',
     }),
   ],
 }

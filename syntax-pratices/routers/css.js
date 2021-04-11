@@ -19,4 +19,9 @@ export default [
     title: 'css绘制矩形',
     component: () => import('@/pages/css/rectangle'),
   },
+  {
+    path: '/pages/css/bfc',
+    title: 'bfc',
+    component: () => import('@/pages/css/bfc'),
+  },
 ]
